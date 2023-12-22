@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiya-Golf</title>
+    <style>
+        /* .main{
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        } */
+        body{
+            font-family: sans-serif;
+        }
+        .first-section{
+            width: 100%;
+            height: 800px;
+            background-image: url(images/home-img.jpg);
+            background-size: 1480px;
+            /* background-color: rgba(140, 132, 176, 0.77); */
+        }
+        .second-section{
+            width: 100%;
+            height: 450px;
+        }
+        .first-section div{
+            margin: 0;
+        }
+        .first-section svg{
+            position: relative;
+            top: -100px;
+        }
+        .navbar{
+            width: 100%;
+            height: 80px;
+            display: flex;
+            background-color: #3D405B;
+            position: fixed;
+            top: 0;
+            z-index: 1;
+        }
+        .navbar div img{
+            width: 50px;
+            height: 50px;
+            margin-left: 150px;
+            margin-right: 5px;
+            margin-top: 12px;
+            filter:invert(10%) sepia(1%) saturate(100%) hue-rotate(1deg) brightness(1000%) contrast(800%);
+        }
+        .header-button{
+           display: flex;
+           margin-left: 250px !important;
+           margin-top: 20px !important;
+        } 
+        .navbar button{
+            margin: 10px;
+            margin-top: 3px;
+            width: 100px;
+            height: 40px;
+            background-color: #3D405B;
+            border: none;
+            color: white;
+            font-size: 15px;
+            font-weight: bold;
+        } 
+        .navbar button:nth-child(7){
+            border: 2px solid #F2CC8F;
+            color: #F2CC8F;
+            border-radius: 20px;
+            width:130px ;
+        }
+        .navbar button:nth-child(4){
+            color: #F2CC8F;
+            border: none;
+        }
+        .navbar button:nth-child(4):hover{
+            color: white;
+        }
+        .navbar button:nth-child(7):hover{
+            background-color: #F2CC8F;
+            color: white;
+        }
+        .navbar button:hover{
+            border: none;
+            color: #F2CC8F;
+        }
+        .content{
+            margin-top: 12px !important;
+            margin-left: 6px;
+        }
+        .content span{
+            display: flex;
+            color: white;
+        }
+        .last-content{
+            color: white;
+        }
+        .content span:nth-child(1){
+            font-size: 25px;
+            font-weight: bolder;
+        }
+        .content span:nth-child(2){
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .last-content{
+            display: flex;
+            flex-direction: column;
+            margin-top: 10px;
+        }
+        .logo-div{
+            display: flex;
+            margin-left: -135px;
+            margin-top: 70px;
+        }
+        .logo-div span:nth-child(1){
+             font-size: 25px;
+            font-weight: bolder;
+            color: black;
+        }
+        .logo-div span:nth-child(2){
+              font-size: 15px;
+            font-weight: bold;
+            color: black;
+        }
+        .logo-div img{
+             width: 50px;
+            height: 50px;
+            margin-left: 150px;
+            margin-right: 5px;
+            margin-top: 12px;
+        }
+        .first-section p{
+           font-size: 40px;
+           font-weight: bold;
+           color: white;
+           margin-top: 130px;
+           margin-left: 100px;
+        }
+        .left-div div{
+            margin-left: 100px;
+        }
+        .left-div button{
+            border: none;
+            background-color: transparent;
+            color: white;
+            height: 40px;
+            width: 150px;
+        }
+        .left-div button:nth-child(1){
+            background-color: #F2CC8F;
+            width: 100px;
+            border-radius: 40px;
+        }
+        .left-div button:nth-child(1):hover{
+            background-color: #E07A5F;
+        }
+        .left-div button:nth-child(2):hover{
+            color: #F2CC8F;
+        }
+        .left-div{
+            position: absolute;
+            top: 80px;
+        }
+        .right-div div{
+           position: absolute;
+           top: 230px;
+           left: 670px;
+        }
+        .right-div div iframe{
+            border-radius: 20px;
+        }
+        .second-left-div{
+            width: 40%;
+            height: 400px;
+        }
+        .inner-div{
+            display: flex;
+        }
+        .second-right-div{
+            width: 60%;
+            height: 400px;
+          }
+          .second-left-div div{
+           margin-top: 50px;
+           margin-left: 50px;
+          }
+          .second-left-div div p{
+            font-size: 21px;
+            color: #797A7D;
+          }
+          .second-right-div img:nth-child(1),.second-right-div img:nth-child(2){
+            width: 270px;
+            height: 170px;
+            border-radius: 15px;
+           
+        }
+
+        .second-right-div div{
+            margin-top: 50px;
+            margin-left: 60px;
+            border-radius: 15px;
+        }
+        .right-div-content div{
+            display: flex;
+            flex-direction: row;
+        }
+        .right-div-content div div{
+            overflow: hidden;
+        }
+        .right-div-content div img:nth-child(1):hover{
+             transform: scale(1.2);
+             border-radius: 15px;
+            /* transition: all 1s ease-in-out; */
+        }
+        .right-div-content span{
+            margin: -20px;
+            margin-left: 120px;
+            font-size: 20px;
+            color: #797A7D;
+        }
+        .third-section{
+            width: 100%;
+            height: 850px;
+            background-image: url("images/play-img-2.jpg"); 
+             background-size: 1480px;
+        }
+        .third-section img{
+           width: 100%;
+           height: 550px;
+        }
+        .third-section-div{
+            width: 40%;
+            height: 300px;
+            border-radius: 20px;
+            color: white;
+            background-color: rgba(255, 255, 225,0.77);
+            background-blend-mode: lighten;
+            position: relative;
+            top: -70px;
+            left: 110px;
+            padding-left: 30px;
+            padding-top: 1px;
+
+            /* -webkit-filter: blur(2px); */
+            
+        }
+        .third-section-div p:nth-child(1){
+            font-size: 40px;
+            color: black;
+            font-weight: bolder;
+        }
+        .third-section-div p:nth-child(2){
+            font-size: 20px;
+            color: #57575a;
+        }
+        .inputfield{
+            height: 70px;
+            width: 450px;
+            display: flex;
+            border: none;
+            border-radius: 40px;
+            position: relative;
+            top: -160px;
+            left: 140px !important;
+            background-color: white;
+        }
+        .inputfield button{
+            position: absolute;
+            right: 0;
+            border: none;
+            border-radius: 40px;
+            width: 160px;
+            height: 50px !important;
+            margin-top: 10px;
+            margin-right: 10px ;
+            background-color: #F2CC8F;
+            color: white;
+            font-size: 20px;
+        }
+        .inputfield button:hover{
+            background-color: #E07A5F;
+        }
+        .inputfield input{
+            background-color: transparent;
+            border: none;
+            margin-right: 100px;
+            margin-left: 10px;
+            font-size: 20px;
+        }
+        .inputfield img{
+            height: 17px;
+            width: 23px;
+            margin-left: 25px;
+            margin-top: 26px;
+        }
+        .bottom-curve{
+            margin-top: 20px;
+        }
+        .third-bottom-curve{
+            margin-top: -250px !important;
+        }
+        .fourth-section{
+            width: 100%;
+            height: 700px;
+        }
+        .fourth-div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+        }
+        .fourth-left-div{
+            width: 55%;
+            height: 550px;
+        }
+        .fourth-right-div{
+            width: 45%;
+            height: 550px;
+        }
+        .table{
+           margin-left: 160px;
+            margin-top: 10px;
+            border-radius: 30px;
+        }
+        .table table{
+          width: 550px;
+          height: 400px;
+          border-radius: 30px;
+            font-weight: bold;
+        }
+        .table table thead{
+            background-color: #3D405B;
+            border-radius: 30px;
+            height: 60px;
+            color: white;
+            text-align: center;
+        }
+        .form form{
+            display: flex;
+            flex-direction: column;
+             background-color: #3D405B;
+             border: none;
+             border-radius: 25px;
+             height: 400px;
+             width: 470px;
+             row-gap: 20px;
+        }
+        .form label{
+            color: white;
+            font-size: 23px;
+            position: relative;
+            top: 30px;
+            left: 40px;
+            margin-bottom: 20px;
+        }
+        .form form input{
+            height: 50px;
+            width: 390px;
+            margin-left: 38px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 30px;
+        }
+        .form form input:nth-child(4){
+            height: 90px;
+            border-radius: 15px;
+        }
+        .form form input:nth-child(5){
+            height: 40px;
+            color: white;
+            background-color: #F2CC8F;
+        }
+        .form form input:nth-child(5):hover{
+            background-color: #E07A5F;
+        }
+        ::-webkit-input-placeholder{
+            font-size: 15px;
+            padding: 20px;
+            color:  rgb(77, 73, 73);
+        }
+       .fifth-section{
+        width: 100%;
+        height: 750px;
+        background-color: #F4F1DE;
+       }
+       .fifth-section h1{
+        font-size: 30px;
+        margin-left: 180px;
+        margin-top: 80px;
+       }
+       .upper,.lower{
+        width: 75%;
+        height: 280px;
+        margin-left: 195px;
+        display: flex;
+        /* overflow: hidden; */
+       }
+       .first-div,.lower-first-div{
+        background-color: #81B29A;
+        height: 100px;
+        width: 160px;
+        margin-top: 10px;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       }
+       .first-div span:nth-child(1),.lower-first-div span:nth-child(1){
+           font-size: 45px;
+        }
+        .first-div span:nth-child(2),.lower-first-div span:nth-child(2){
+            color: white;
+        }
+        /* .second-div{
+            overflow: hidden;
+            
+        } */
+        .second-div,.lower-second-div{
+            overflow: hidden !important;
+            border-radius: 15px;
+        }
+        .second-div img,.lower-second-div img{
+            height: 230px;
+            width: 350px;
+            border-radius: 20px;
+            margin-left: 22px;
+            margin-top: 10px;
+           /* transform: scale(1.1); */
+        }
+        .second-div img:hover,.lower-second-div img:hover{
+            transform: scale(1.1);
+            /* overflow: hidden; */
+        }
+       .third-div,.lower-third-div{
+        width: 500px;
+       }
+       .third-div h1,.lower-third-div h1{
+           margin-left: 20px;
+           margin-top: 20px;
+       }
+       .third-div h1:hover,.lower-third-div h1:hover{
+        color: #F2CC8F;
+       }
+       .third-div p,.lower-third-div p{
+        color: #57575a;
+        margin-top: -10px;
+        margin-left: 20px;
+        /* padding-left: 10px; */
+        font-size: 20px;
+       }
+       .location,.location-lower{
+        display: flex;
+        width: 550px;
+        margin-left: 20px;
+        column-gap: 25px;
+       }
+       .location div,.location-lower div{
+        display: flex;
+        row-gap: 10px;
+        flex-direction: column;
+       }
+       .location div button,.location-lower div button{
+        margin-left: 175px;
+        margin-top: 8px;
+        border-radius: 50px;
+        height: 30px;
+        width: 100px;
+        border: none;
+        background-color: #F2CC8F;
+        color: white;
+       }
+       .location div button:hover,.location-lower div button:hover,.direction :hover{
+        background-color: #E07A5F;
+       }
+       .location div:nth-child(1),.location-lower div:nth-child(1){
+            font-size: 15px;
+            font-weight: bold;
+       }
+       .sixth-section{
+            width: 100%;
+            height: 800px;
+       }
+       .last-curve{
+        margin-top: -170px;
+       }
+       .last-div{
+        width: 80%;
+        height: 600px;
+        margin-left: 150px;
+        margin-top: 100px;
+        display: flex;
+       }
+       .last-left-div{
+            width: 45%;
+            height: 600px;
+       }
+       .last-right-div{
+            width: 55%;
+            height: 600px;
+            z-index: -1;
+       }
+       .last-form input:nth-child(1),.last-form input:nth-child(2){
+        margin: 10px;
+        border-radius: 50px;
+        height: 45px;
+        width: 200px;
+       }
+       .last-form input:nth-child(4){
+        height: 100px;
+        width: 430px;
+        border-radius: 20px;
+        margin-left: 10px;
+        margin-top: 10px;
+        border-color: #9a9ca2;
+       }
+       .last-form input:nth-child(6){
+        height: 45px;
+        width: 430px;
+        margin-left: 10px;
+        margin-top: 18px;
+        border-radius: 50px;
+        background-color: #F2CC8F;
+        color: white;
+        border: none;
+       }
+       .last-form input:nth-child(6):hover{
+        background-color: #E07A5F;
+        border: none;
+       }
+       .last-right-div img{
+        height: 200px;
+        width: 530px;
+        margin-top: 70px;
+        z-index: -1;
+       }
+       .direction{
+        height: 160px;
+        width: 230px;
+        border-radius: 30px;
+        background-color: #3D405B;
+        margin-top: -190px;
+        margin-left: 110px;
+        z-index: 2;
+       }
+       .direction p{
+        color: white;
+        font-size: 18px;
+        padding: 15px;
+       }
+       .direction div{
+        color: white;
+        background-color: #E07A5F;
+        width: 230px;
+        height: 40px;
+        margin-top: 26px;
+        border-bottom-left-radius: 30px;
+        border-bottom-right-radius: 30px;
+        text-align: center;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+       }
+       .last-bottom-div{
+        padding-top: 150px;
+        padding-left: 100px;
+        display: flex;
+        flex-direction: column;
+        row-gap: 30px;
+        z-index: 2;
+    }
+      .last-bottom-div div{
+        font-size: 18px;
+        color: #797A7D;
+        margin-left: -26px;
+       }
+       .last-bottom-div div span{
+        margin: 25px;
+       }
+       .last-curve{
+        z-index: -1;
+       }
+    </style>
+</head>
+<body>
+    <div class="main">
+    <section class="first-section">
+
+        <div>
+            <div class="navbar">
+                <div>
+                    <img src="images/f5.png" alt="no image found">
+                </div>
+                <div class="content">
+                <span>Tiya</span>
+                <span>Golf Club</span>
+                </div>
+                <div class="header-button">
+                    <button>Home</button>
+                    <button><a href=".second-section">About</a></button>
+                    <button>Membership</button>
+                    <button>Events</button>
+                    <button>Contact Us</button>
+                    <button>Pages</button>
+                    <button>Member login</button>
+                </div>
+            </div>
+        </div>
+            <section class="main-content">
+                <div class=top-curve>
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 590" xmlns="http://www.w3.org/2000/svg"
+                class="transition duration-300 ease-in-out delay-150">
+                
+                <path
+                d="M 0 600 C 0 600 0 300 0 300 C 72.8051 329.144 145.61 358.287 229 322 C 312.39 285.713 406.364 183.995 485 192 C
+                563.636 200.005 626.933 317.733 713 358 C 799.067 398.267 907.903 361.072 986 358 C 1064.1 354.928 1111.46 385.979 1182
+                382 C 1252.54 378.021 1346.27 339.01 1440 300 C 1440 300 1440 600 1440 600 Z"
+                stroke="none" 
+                stroke-width="0" 
+                fill="#3d405b"
+                fill-opacity="1"
+                transform="rotate(-180 720 300)"></path>
+
+                    <!-- d="M 0,600 C 0,600 0,300 0,300 C 72.80512820512817,329.1435897435897 145.61025641025634,358.28717948717946 229,322 C 312.38974358974366,285.71282051282054 406.3641025641026,183.9948717948718 485,192 C 563.6358974358974,200.0051282051282 626.9333333333333,317.73333333333335 713,358 C 799.0666666666667,398.26666666666665 907.9025641025642,361.0717948717949 986,358 C 1064.0974358974358,354.9282051282051 1111.4564102564102,385.97948717948714 1182,382 C 1252.5435897435898,378.02051282051286 1346.271794871795,339.01025641025643 1440,300 C 1440,300 1440,600 1440,600 Z"
+                    stroke="none" stroke-width="0" fill="#3d405b" fill-opacity="1"
+                    class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 300)"></path> -->
+            </svg>
+                </div>
+            <div class="left-div">
+                <p>Welcome to the club<br>
+                Tiya is Lifestyle</p>
+                <div>
+                <button>Our Story</button>
+                <button>Become a member</button>
+                </div>
+            </div>
+            <div class="right-div">
+                <div>
+                    <iframe width="560" height="315" frameborderradius="20px" src="https://www.youtube.com/embed/MGNgbNGOzh8?si=LCvuOANJX8vgEO3I"
+                        title="YouTube video player" frameborder="0"  
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen></iframe>
+                        </div>
+            </div>
+            <div class="bottom-curve">
+        <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg"
+            class="transition duration-300 ease-in-out delay-150">
+            <path
+                d="M 0,400 C 0,400 0,200 0,200 C 108.6846153846154,179.5769230769231 217.3692307692308,159.15384615384616 284,160 C 350.6307692307692,160.84615384615384 375.20769230769224,182.96153846153848 440,187 C 504.79230769230776,191.03846153846152 609.8000000000001,177 694,156 C 778.1999999999999,135 841.5923076923078,107.03846153846158 925,129 C 1008.4076923076922,150.96153846153842 1111.8307692307692,222.84615384615387 1201,243 C 1290.1692307692308,263.15384615384613 1365.0846153846155,231.57692307692307 1440,200 C 1440,200 1440,400 1440,400 Z"
+                stroke="none" stroke-width="0" fill="white" fill-opacity="1"
+                class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+        </svg>
+            </div>
+            </div>
+        </section>
+    </section>
+    <section class="second-section">
+        <div>
+            <h1 style="text-align: center; margin-top: 140px;">About Tiya</h1>
+            <div class="inner-div">
+            <div class="second-left-div">
+                <div>
+                <h1>Tiya Club History</h1>
+                <p><b>Since 1984</b>, Tiya is ranked #8 in the top 10 golf courses in the world. Tiya is Bootstrap 5 HTML CSS template for golf
+                clubs. Anyone can modify and use this layout for commercial purposes.</p>
+                <p>Tiya Golf Club is 100% free CSS template provided by TemplateMo website. Please tell your friends about our website.
+                Thank you for visiting.</p>
+            </div>
+            </div>
+            <div class="second-right-div">
+                <div class="right-div-content">
+                    <div>
+                        <div>
+                    <img src="images/f7.jpg" alt="no image found">
+                    </div>
+                    <div>
+                    <img src="images/f8.jpg" alt="no image found">
+                    </div>
+                </div>
+                    <br>
+                    <span style="font-size: 25px; color: black;">Michael</span>
+                    <span>Founder</span>
+                    <span  style="font-size: 25px; color: black;">Sandy</span>
+                    <span>Co-Founder</span>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="third-section">
+        <div>
+            <div third-top-curve>
+                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg"
+                    class="transition duration-300 ease-in-out delay-150">
+                    <path
+                        d="M 0,400 C 0,400 0,200 0,200 C 86.50512820512819,208.36153846153846 173.01025641025637,216.72307692307692 254,233 C 334.9897435897436,249.27692307692308 410.46410256410263,273.46923076923076 479,255 C 547.5358974358974,236.5307692307692 609.1333333333333,175.4 698,170 C 786.8666666666667,164.6 903.0025641025641,214.93076923076924 988,231 C 1072.997435897436,247.06923076923076 1126.8564102564103,228.87692307692305 1197,218 C 1267.1435897435897,207.12307692307695 1353.5717948717947,203.56153846153848 1440,200 C 1440,200 1440,400 1440,400 Z"
+                        stroke="none" stroke-width="0" fill="white" fill-opacity="1"
+                        class="transition-all duration-300 ease-in-out delay-150 path-0" transform="rotate(-180 720 200)"></path>
+                </svg>
+            </div>
+            <div class="third-section-div">
+                <p>Get our newsletter</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor ut labore et dolore.</p>
+            </div>
+            <div class="inputfield">
+                <img src="images/mail-logo.png" alt="no image found">
+                <input type="text" placeholder="Email Address">
+                <button>Subscribe</button>
+            </div>
+            <div class="third-bottom-curve">
+                <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg"
+                    class="transition duration-300 ease-in-out delay-150">
+                    <path
+                        d="M 0,400 C 0,400 0,200 0,200 C 95.87435897435898,170.2051282051282 191.74871794871797,140.4102564102564 273,167 C 354.25128205128203,193.5897435897436 420.8794871794872,276.56410256410254 499,273 C 577.1205128205128,269.43589743589746 666.7333333333332,179.33333333333334 740,171 C 813.2666666666668,162.66666666666666 870.1871794871796,236.1025641025641 941,257 C 1011.8128205128204,277.8974358974359 1096.5179487179487,246.25641025641025 1182,228 C 1267.4820512820513,209.74358974358975 1353.7410256410258,204.87179487179486 1440,200 C 1440,200 1440,400 1440,400 Z"
+                        stroke="none" stroke-width="0" fill="white" fill-opacity="1"
+                        class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section class="fourth-section">
+        <div>
+        
+            <p style="text-align: center; font-size: 40px; font-weight: bolder;">Membership at Tiya</p>
+            <div class="fourth-div">
+            <div class="fourth-left-div">
+                <h1 style="margin-left: 160px; margin-top: 10px;">Membership Fees</h1>
+                <div class="table">
+                <table>
+                    <thead style="border-radius: 30px;">
+                        <tr>
+                            <td>Yearly Access</td>
+                            <td>T1 $420</td>
+                            <td>T2 $640</td>
+                            <td>T3 $860</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: 10px;">Golf Insurance</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr style="background-color: #F4F1DE;">
+                            <td>Club Facilities</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Country Club</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr  style="background-color: #F4F1DE;">
+                            <td>Weekend Seasonal</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr>
+                            <td>Premium Courses</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                        <tr  style="background-color: #F4F1DE;">
+                            <td>Pro's Networking</td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                            <td><input type="checkbox"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </div>
+            <div class="fourth-right-div">
+                <h1 style="margin: 15px;">Please Join Us!</h1>
+                <div class="form">
+                    <form action="">
+                        <label for="">Become a Member</label>
+                       
+                        <input type="text" placeholder="Full Name">
+                        <input type="text" placeholder="Email Address">
+                        <input type="text" placeholder="Comment">
+                        <input type="submit" placeholder="Submit">
+                      
+                    </form>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="fifth-section">
+        <div>
+            <h1 style="font-size: 30px;">Upcoming Events</h1>
+            <div class="upper">
+                <div class="first-div">
+                    <span>24</span>
+                    <span>Feb 2048</span>
+                </div>
+                <div class="second-div">
+                    <img src="images/f6.jpg" alt="no image found">
+                </div>
+                <div class="third-div">
+                    <h1>Private activities</h1>
+                    <p style="color: gray;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.</p>
+                    <p style="margin-top: -20px; color: gray;">____________________________________________________________________</p>
+                     <div class="location">
+                        <div><span>Location:</span><span>Ticket:</span></div>
+                        <div><span>National Center,NYC</span><span>$250</span></div>
+                        <div><button>Buy Ticket</button></div>
+                     </div>
+                </div>
+            </div>
+            <div class="lower">
+            <div class="lower-first-div">
+                <span>28</span>
+                <span>Feb 2048</span>
+            </div>
+            <div class="lower-second-div">
+                <img src="images/f3.jpg" alt="no image found">
+            </div>
+            <div class="lower-third-div">
+                <h1>Group tournament activities</h1>
+                <p style="color: gray;">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+                    ut labore et dolore magna
+                    aliqua.</p>
+                <p style="margin-top: -20px; color: gray;">____________________________________________________________________</p>
+                <div class="location-lower">
+                    <div><span>Location:</span><span>Ticket:</span></div>
+                    <div><span>National Center,NYC</span><span>$250</span></div>
+                    <div><button>Buy Ticket</button></div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </section>
+    <section class="sixth-section">
+        <div class="last-div">
+            <div class="last-left-div">
+                <div class="last-form">
+                <h1 style="font-size: 33px; margin-left: 10px;">Contact Tiya</h1>
+                <form action="">
+                    <input type="text" placeholder="Full Name">
+                    <input type="text" placeholder="Email Address"><br>
+                    <input type="text" placeholder="Message"><br>
+                    <input type="submit" placeholder="Submit Form">
+                </form>
+                </div>
+                <div class="logo-div">
+                    <div>
+                        <img src="images/f5.png" alt="no image found">
+                    </div>
+                     <div class="last-content">
+                        <span>Tiya</span>
+                        <span>Golf Club</span>
+                        </div>
+                </div>
+            </div>
+            <div class="last-right-div">
+                <img src="images/WorldMap.svg" alt="no image found">
+                <div class="direction">
+                    <p><b>London, United Kingdom</b><br>
+                    (020) 010-020-0340<br>
+                    info@company.com</p>
+                   <div>Directions</div>
+                </div>
+                <div class="last-bottom-div">
+                    <h3>Join Us</h3>
+                    <div>
+                    <span>Mon-Fri</span>
+                    <span>6:00 AM - 6:00 PM</span>
+                    <span></span>
+                    </div>
+                    <div>
+                    <span>Sat-Sun</span>
+                    <span>6:30 AM - 8:30 PM</span>
+                    <span>Design: TemplateMo</span>
+                </div>
+                <div>
+                    <span>Copyright © 2048 Tiya Golf Club</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="last-curve">
+            <svg width="100%" height="100%" id="svg" viewBox="0 0 1440 390" xmlns="http://www.w3.org/2000/svg"
+                class="transition duration-300 ease-in-out delay-150">
+                <path
+                    d="M 0,400 C 0,400 0,200 0,200 C 95.87435897435898,170.2051282051282 191.74871794871797,140.4102564102564 273,167 C 354.25128205128203,193.5897435897436 420.8794871794872,276.56410256410254 499,273 C 577.1205128205128,269.43589743589746 666.7333333333332,179.33333333333334 740,171 C 813.2666666666668,162.66666666666666 870.1871794871796,236.1025641025641 941,257 C 1011.8128205128204,277.8974358974359 1096.5179487179487,246.25641025641025 1182,228 C 1267.4820512820513,209.74358974358975 1353.7410256410258,204.87179487179486 1440,200 C 1440,200 1440,400 1440,400 Z"
+                    stroke="none" stroke-width="0" fill="#81B29A" fill-opacity="1"
+                    class="transition-all duration-300 ease-in-out delay-150 path-0"></path>
+            </svg>
+        </div>
+    </section>
+    </div>
+</body>
+</html>
